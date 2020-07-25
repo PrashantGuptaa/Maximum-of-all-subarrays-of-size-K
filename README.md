@@ -1,5 +1,5 @@
 # Maximum-of-all-subarrays-of-size-K
-Brute force program to find the minimum element in sub array.
+
 
 E.g
 Sample Input:

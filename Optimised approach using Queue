@@ -1,0 +1,40 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.*;
+
+class Main {
+    public static void main(String[] args) throws IOException {
+        //BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        Queue<Integer> go = new LinkedList<>();
+        Scanner sc = new Scanner(System.in);
+        StringBuilder sb = new StringBuilder();
+
+
+        int size = sc.nextInt();
+        int subarraysize = sc.nextInt();
+        int a[] = new int[size];
+
+        int i = 0;
+        for(  ; i < subarraysize ; i++)
+            go.offer(sc.nextInt());
+
+        int elementleft = size - subarraysize + 1 ;
+        while(elementleft-- != 0 ) {
+            int max = Integer.MIN_VALUE;
+            for(int j : go){
+                max = Math.max(max, j);
+            }
+            sb.append(max+" ");
+            if(elementleft == 0)
+                break;
+
+            go.poll();
+            go.offer(sc.nextInt());
+        }
+
+        System.out.print(sb);
+
+    }
+
+}
